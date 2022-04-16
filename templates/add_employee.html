@@ -1,0 +1,66 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+        Add Employee Details
+{% endblock %}
+{% block content %}
+
+
+    <main class="main-content">
+        <h3>Employee Details Form</h3>
+        <div id="add-form">
+            {% if msg %}
+            <h4 class="msg">{{msg}}</h4>
+            {% else %}
+            <h4 class="msg"></h4>
+            {% endif %}
+            {% if err_msg %}
+            <h4 class="msg">{{err_msg}}</h4>
+            {% else %}
+            <h4 class="msg"></h4>
+            {% endif %}
+        <form action="/enterdetails" method="post" id="form-items">
+            
+
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-row">
+                <label for="employee_id">Employee-Id</label>
+                <input type="integer" id="employee_id" name="employee_id" />
+            </div>
+            <div class="form-row">
+                <label for="phone">phone</label>
+                <input type="text" name="phone" id="phone">
+            </div>
+
+            <div class="form-row">
+                <label for="position">Designation</label>
+                <input type="text" name="position" id="position">
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-row">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="Male"> Male
+                    </option>
+                    <option value="Female"> Female
+                    </option>
+                    <option value="other"> Prefer not to tell
+                    </option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="date">DOB</label>
+                <input type="date" name="date" id="date">
+            </div>
+            <input type="submit" id="submit-btn" value="Submit">
+        </form>
+        </div>
+    </main>
+
+{% endblock %}

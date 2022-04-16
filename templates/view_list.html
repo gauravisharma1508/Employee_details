@@ -1,0 +1,34 @@
+{% extends 'navbar.html' %}
+{% block title %}
+        View Employee Details
+{% endblock %}
+{% block content %}
+<main class="main-content">
+    <h3>List of Employees :-</h3>
+    <div id="form"> 
+    <table border="2">
+        <thead id="title">
+            <td>ID</td>
+            <td>Name</td>
+            <td>Phone</td>
+            <td>email</td>
+            <td>Deignation</td>
+            <td>DOB</td>
+            <td>Gender</td>
+        </thead>
+        {% for employee in employees %}
+        <tr>
+            <td>{{employee.employee_id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.position}}</td>
+            <td>{{employee.dob}}</td>
+            <td>{{employee.gender}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</main>
+
+{% endblock %}

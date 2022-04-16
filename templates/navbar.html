@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <script src="{{ url_for('static',filename='script/script.js')}}" defer></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static',filename='images/logo.png')}}" id="logo" alt="">
+        <nav>
+            <ul>
+                <li><a href="/add_employee">Add Employee</a></li>
+                <li><a href="/view_list">View List</a></li>
+                <li><a href="/remove_employee">Delete by Employee-Id</a></li>
+			<li><a href="/" id="home"><img id="home-sign" src=" {{ url_for('static',filename='images/home-icon-silhouette-svgrepo-com.svg')}}" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+
+{% block content %}
+
+{% endblock %}
+
+<footer class="footer">
+    <span class="footer_contents">&copy; Gauravi Sharma</span>
+</footer>
+</body>
+
+</html>

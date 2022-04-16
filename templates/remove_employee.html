@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+
+{% block title %}
+        Delete Employee Details
+{% endblock %}
+{% block content %}
+
+<main class="main-content">
+    <h3>Remove Employee from the list</h3>
+    <div id="form">
+    {% if msg %}
+    <h4 class="msg">{{msg}}</h4>
+    {% else %}
+    <h4 class="msg"></h4>
+    {% endif %}
+    <form action="/deleteEntry" method="post">
+        <label for="id">Employee Id</label>
+         <input type="text" name="id">
+        <input type="submit" value="Submit" id="dlt-sub">
+
+        
+    </form>
+    </div>
+</main>
+{% endblock %}
